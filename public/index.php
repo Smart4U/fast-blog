@@ -15,6 +15,8 @@ $config = [
     'db.pass' => ''
 ];
 
+$request = \GuzzleHttp\Psr7\ServerRequest::fromGlobals();
+$response = new \GuzzleHttp\Psr7\Response();
 
 function notFound() {
     http_response_code(404);
@@ -97,5 +99,3 @@ else
 }
 
 ?>
-
-
