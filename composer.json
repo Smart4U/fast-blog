@@ -1,0 +1,12 @@
+{
+    "name": "smart4u/fast-blog",
+    "authors": [
+        {
+            "name": "Smart4U",
+            "email": "inbox.martinez.dev@gmail.com"
+        }
+    ],
+    "require": {
+        "twbs/bootstrap": "^3.3"
+    }
+}
