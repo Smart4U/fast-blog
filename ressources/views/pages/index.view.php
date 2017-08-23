@@ -24,7 +24,7 @@ $posts = $pdo->query('SELECT * FROM posts ORDER BY updated_at DESC LIMIT 5');
 
                 <?php /*$cache->cache($post, function () use ($post) { */ ?>
                 <div class="blog-post">
-                    <a href="<?= $config['app.domain']; ?>/blog/<?= $post->slug;?>-<?= $post->id;?>"><h2 class="blog-post-title"><?= $post->title; ?></h2></a>
+                    <a href="<?= $config->app['domain']; ?>/blog/<?= $post->slug;?>-<?= $post->id;?>"><h2 class="blog-post-title"><?= $post->title; ?></h2></a>
                     <p class="blog-post-meta"><?= $post->updated_at; ?> by <a href="#"><?= $post->author_id; ?></a></p>
                     <p><?= $post->subtitle; ?></p>
 

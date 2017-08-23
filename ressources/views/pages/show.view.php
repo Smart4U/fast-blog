@@ -17,7 +17,7 @@
             <hr>
 
             <section id="comment">
-                <form class="form-horizontal" method="POST" action="<?= $config['app.domain']; ?>/comment">
+                <form class="form-horizontal" method="POST" action="<?= $config->app['domain']; ?>/comment">
                     <input type="hidden" name="token_csrf" value="">
                     <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 control-label">Email</label>

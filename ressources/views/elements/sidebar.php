@@ -17,7 +17,7 @@
         <h4>Catégories</h4>
         <ol class="list-unstyled">
             <?php foreach($categories as $category) : ?>
-                <li><a href="<?= $config['app.domain'] .'/category/' . $category->name;  ?>"><?= $category->name; ?></a></li>
+                <li><a href="<?= $config->app['domain'] .'/category/' . $category->name;  ?>"><?= $category->name; ?></a></li>
             <?php endforeach; ?>
         </ol>
     </div>

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="<?= $config['app.language']; ?>">
+<html lang="<?= $config->app['language']; ?>">
 <head>
-    <meta charset="<?= $config['app.encode']; ?>">
+    <meta charset="<?= $config->app['encode']; ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?= (isset($description)) ? $description : ''; ?>">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
     <title><?= ($title) ?? $title ?? $post->title; ?></title>
-    <link href="<?= $config['app.domain']; ?>/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?= $config['app.domain']; ?>/css/blog.css" rel="stylesheet">
+    <link href="<?= $config->app['domain']; ?>/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= $config->app['domain']; ?>/css/blog.css" rel="stylesheet">
 </head>
 
 <body>

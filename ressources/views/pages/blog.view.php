@@ -21,7 +21,7 @@ $posts = $pdo->query('SELECT * FROM posts');
 
             <?php foreach ($posts->fetchAll() as $post) : ?>
                 <div class="blog-post">
-                    <a href="<?= $config['app.domain']; ?>/blog/<?= $post->slug;?>-<?= $post->id;?>"><h2 class="blog-post-title"><?= $post->title; ?></h2></a>
+                    <a href="<?= $config->app['domain']; ?>/blog/<?= $post->slug;?>-<?= $post->id;?>"><h2 class="blog-post-title"><?= $post->title; ?></h2></a>
                     <p class="blog-post-meta"><?= $post->updated_at; ?> by <?= $post->author_id; ?></p>
                     <p><?= $post->subtitle; ?></p>
 

@@ -1,19 +1,10 @@
 <?php
 
-require dirname(__DIR__) . '/bootstrap.php';
-
 session_start();
 
-// CONFIG
-$config = [
-    'app.encode' => 'utf-8',
-    'app.language' => 'fr',
-    'app.domain' => '',
+require dirname(__DIR__) . '/bootstrap.php';
 
-    'db.name' => '',
-    'db.user' => '',
-    'db.pass' => ''
-];
+$config = new ArrayObject(require BASE . '/config/config.php', ArrayObject::ARRAY_AS_PROPS);
 
 $request = \GuzzleHttp\Psr7\ServerRequest::fromGlobals();
 $response = new \GuzzleHttp\Psr7\Response();
@@ -24,7 +15,7 @@ function notFound() {
 }
 
 // DATABASE
-$pdo = new PDO("mysql:host=localhost;dbname=".$config['db.name'], $config['db.user'], $config['db.pass'], [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ]);
+$pdo = new PDO("mysql:host=localhost;dbname=".$config->database['db_name'], $config->database['db_user'], $config->database['db_pass'], [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8', PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ]);
 
 // NAVBAR
 $navigate = $pdo->query('SELECT * FROM categories WHERE nav = TRUE ORDER BY position ASC');
